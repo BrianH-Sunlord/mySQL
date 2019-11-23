@@ -158,7 +158,7 @@
 				header('Location: Search_simple.php');
 				break;
 			case ("PA"):
-				header('Location: Search_simple.php');
+				header('Location: Search_PA.php');
 				break;
 			case ("SF"):
 				header('Location: Search_simple.php');
