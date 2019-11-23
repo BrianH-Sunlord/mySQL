@@ -183,7 +183,7 @@
 				header('Location: AddNewPartNumber_simple.php');
 				break;
 			case ("PA"):
-				header('Location: AddNewPartNumber_simplewithcode.php');
+				header('Location: AddNewPartNumber_PA.php');
 				break;	
 			case ("FF"):
 				header('Location: AddNewPartNumber_simplewithcode.php');
