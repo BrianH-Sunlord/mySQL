@@ -100,7 +100,7 @@
 		//diameter can be blank or contain the input
 		$diameter_low = trim($_POST['diameter_low']);
 		$diameter_high = trim($_POST['diameter_high']);
-		$diameterstring = "dielectric_dia BETWEEN " . $diameter_low . " AND " . $diameter_high . " " ;
+		$diameterstring = "ferrite_dia BETWEEN " . $diameter_low . " AND " . $diameter_high . " " ;
 						
 
 
