@@ -47,6 +47,7 @@
 			<option value="CF">Cover Fixture (CF)</options>
 			<option value="MF">Misc Fixture (MF)</options>
 			<option value="OD">Outline Drawing (OD)</options>
+			<option value="RF">Recommended Footprint (RF)</options>			
 			<option value="MAN">Manufacturing Procedures (MAN)</options>
 			<option value="TEST">Test Procedures (TEST)</options>
 			<option value="INSP">Inspection Procedures (INSP)</options>	
@@ -72,6 +73,8 @@
 					<select name="size_code">
 					<option value="">  </options>
 					<option value="7">7</options>
+					<option value="8">8</options>					
+					<option value="9">9</options>					
 					<option value="10">10</options>
 					<option value="12">12</options>
 					<option value="15">15</options>
@@ -196,6 +199,9 @@
 				break;
 			case ("MF"):
 				header('Location: AddNewPartNumber_simplewithcode.php');
+				break;	
+			case ("RF"):
+				header('Location: AddNewPartNumber_simple.php');
 				break;				
 
 		}

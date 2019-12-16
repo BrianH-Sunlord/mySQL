@@ -49,6 +49,7 @@
 			<option value="CF">Cover Fixture (CF)</options>			
 			<option value="MF">Miscellaneous Fixture (MF)</options>			
 			<option value="OD">Outline Drawing (OD)</options>
+			<option value="RF">Recommended Footprint (RF)</options>			
 			<option value="MAN">Manufacturing Procedures (MAN)</options>
 			<option value="TEST">Test Procedures (TEST)</options>
 			<option value="INSP">Inspection Procedures (INSP)</options>	
@@ -170,6 +171,9 @@
 				header('Location: Search_simple.php');
 				break;
 			case ("MF"):
+				header('Location: Search_simple.php');
+				break;	
+			case ("RF"):
 				header('Location: Search_simple.php');
 				break;				
 
