@@ -38,6 +38,7 @@
 			<option value="OT">Other (OT)</options>
 			<option value="PF">Pin Frame (PF)</options>
 			<option value="PC">PCB (PC)</options>
+			<option value="PK">Packaging (PK)</options>
 			<option value="PP">Pole Piece (PP)</options>
 			<option value="RC">Return, Cover (RC)</options>
 			<option value="TC">Temperature Compensator (TC)</options>
@@ -131,6 +132,9 @@
 			case ("PP"):
 				header('Location: Search_CV.php');
 				break;
+			case ("PK"):
+				header('Location: Search_simple.php');
+				break;				
 			case ("MS"):
 				header('Location: Search_CV.php');
 				break;

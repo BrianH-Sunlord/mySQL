@@ -36,6 +36,7 @@
 			<option value="OT">Other (OT)</options>
 			<option value="PF">Pin Frame (PF)</options>
 			<option value="PC">PCB (PC)</options>
+			<option value="PK">Packaging (PK)</options>
 			<option value="PP">Pole Piece (PP)</options>
 			<option value="RC">Return, Cover (RC)</options>
 			<option value="TC">Temperature Compensator (TC)</options>
@@ -188,6 +189,9 @@
 			case ("PA"):
 				header('Location: AddNewPartNumber_PA.php');
 				break;	
+			case ("PK"):
+				header('Location: AddNewPartNumber_PK.php');
+				break;				
 			case ("FF"):
 				header('Location: AddNewPartNumber_simplewithcode.php');
 				break;
