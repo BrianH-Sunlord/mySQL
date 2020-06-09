@@ -73,6 +73,7 @@
 					<span class="label-body"><b>Select Size Code (dia):</b></span><br></label>
 					<select name="size_code">
 					<option value="">  </options>
+					<option value="5">5</options>					
 					<option value="7">7</options>
 					<option value="8">8</options>					
 					<option value="9">9</options>					
