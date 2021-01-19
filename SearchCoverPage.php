@@ -134,7 +134,7 @@
 				break;
 			case ("PK"):
 				header('Location: Search_table.php');
-				break;				
+				break;			
 			case ("MS"):
 				header('Location: Search_CV.php');
 				break;
