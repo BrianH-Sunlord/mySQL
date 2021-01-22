@@ -57,6 +57,7 @@
 				?>
 			<label for="entered_by">Entered by:</label>
 			<select class="u-full-width" name='entered_by'>
+				<option selected = "selected" value=""> </option>
 				<?php
 				while ($row = mysqli_fetch_array($result)) {
 					echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
