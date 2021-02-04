@@ -238,16 +238,15 @@ $target_dir = "d://docvault/";  //change to d://docvault/ for shared drive
 			
 			//Upload file from temp storage to target directory			
 			move_uploaded_file($file_tmp,$file_name_with_dir);
-			echo "File uploaded successfully...refreshing...";
-			echo '<meta http-equiv="refresh" content="2">';
+			echo "<h1>File uploaded successfully!...refreshing...</h1>";
+			echo '<meta http-equiv="refresh" content="10">';
 		
 		}else{
-			echo "Error!";
-			echo '<br>';
+			echo '<h1>Error!</h1>';
 			foreach ($errors as $key=>$item){
 				echo "$item <br>";
 			}
-			echo "Wait while we refresh page, you need to start again.....";
+			echo '<h3>Wait while we refresh page, you need to start again.....</h3>';
 			echo '<meta http-equiv="refresh" content="10">';
 		}		
 
