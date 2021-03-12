@@ -124,7 +124,7 @@ $target_dir = "d://docvault/";  //change to d://docvault/ for shared drive
 		$rev_regex = "/^[A-Z]{1}$/";
 		$regex = array("/^[A-Z]{2}-[0-9]{1,2}-[0-9]{4}$/" , "/^[A-Z]{2}-[0-9]{4}$/" , "/^DVRF[0-9]{5}$/" , "/^DVRF[0-9]{5}$/", "/^[A-Z]{3}-[0-9]{4}$/");
 		$name_text = array(" rev ", " rev ", " Datasheet rev ", " Test File rev " , " rev ");
-		$extensions= array("dwg","docx","xlsx");
+		$extensions= array("dwg","docx","xlsx", "pdf");
 		
 		//Set inputs equal to variables
 		$drawing_number = trim($_POST['drawing_number']);

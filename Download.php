@@ -97,7 +97,7 @@ $target_dir = "d://docvault/"; //change to d://docvault/ for shared drive
 		$errors= array();
 		$regex = array("/^[A-Z]{2}-[0-9]{1,2}-[0-9]{4}$/" , "/^[A-Z]{2}-[0-9]{4}$/" , "/^DVRF[0-9]{5}$/" , "/^DVRF[0-9]{5}$/" , "/^[A-Z]{3}-[0-9]{4}$/");
 		$name_text = array(" rev ", " rev ", " Datasheet rev ", " Test File rev " , " rev ");
-		$file_ext = array("dwg" , "dwg" , "docx" , "xlsx" , "docx");
+		$file_ext = array("dwg" , "dwg" , "docx" , "xlsx" , "pdf");
 		$rev = "?";
 
 	 	//Set inputs equal to variables
