@@ -26,6 +26,7 @@
 			<input type="radio" name="type" value="short"> AA-XXXX<br>
 			<input type="radio" name="type" value="datasheet"> Datasheet<br>
 			<input type="radio" name="type" value="testfile"> Test File<br>
+			<input type="radio" name="type" value="relreport"> REL-XXXX<br>
 		</label>
 		</fieldset>
 	</div>
@@ -121,8 +122,8 @@ $target_dir = "d://docvault/";  //change to d://docvault/ for shared drive
 		//Define variables
 		$errors= array();
 		$rev_regex = "/^[A-Z]{1}$/";
-		$regex = array("/^[A-Z]{2}-[0-9]{1,2}-[0-9]{4}$/" , "/^[A-Z]{2}-[0-9]{4}$/" , "/^DVRF[0-9]{5}$/" , "/^DVRF[0-9]{5}$/");
-		$name_text = array(" rev ", " rev ", " Datasheet rev ", " Test File rev ");
+		$regex = array("/^[A-Z]{2}-[0-9]{1,2}-[0-9]{4}$/" , "/^[A-Z]{2}-[0-9]{4}$/" , "/^DVRF[0-9]{5}$/" , "/^DVRF[0-9]{5}$/", "/^[A-Z]{3}-[0-9]{4}$/");
+		$name_text = array(" rev ", " rev ", " Datasheet rev ", " Test File rev " , " rev ");
 		$extensions= array("dwg","docx","xlsx");
 		
 		//Set inputs equal to variables
@@ -169,7 +170,14 @@ $target_dir = "d://docvault/";  //change to d://docvault/ for shared drive
 				$i=3;
 				if (preg_match($regex[$i], $drawing_number)==FALSE) {
 					$errors[]="Part number format does not match Type selected.";
-				}			
+				}		
+
+			case "relreport":
+				$i=4;
+				if (preg_match($regex[$i], $drawing_number)==FALSE) {
+					$errors[]="Part number format does not match Type selected.";
+				}	
+				
 			break;
 		}
 		
@@ -238,15 +246,16 @@ $target_dir = "d://docvault/";  //change to d://docvault/ for shared drive
 			
 			//Upload file from temp storage to target directory			
 			move_uploaded_file($file_tmp,$file_name_with_dir);
-			echo "<h1>File uploaded successfully!...refreshing...</h1>";
-			echo '<meta http-equiv="refresh" content="10">';
+			echo "File uploaded successfully...refreshing...";
+			echo '<meta http-equiv="refresh" content="2">';
 		
 		}else{
-			echo '<h1>Error!</h1>';
+			echo "Error!";
+			echo '<br>';
 			foreach ($errors as $key=>$item){
 				echo "$item <br>";
 			}
-			echo '<h3>Wait while we refresh page, you need to start again.....</h3>';
+			echo "Wait while we refresh page, you need to start again.....";
 			echo '<meta http-equiv="refresh" content="10">';
 		}		
 

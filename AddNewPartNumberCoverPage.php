@@ -176,7 +176,7 @@
 				header('Location: AddNewPartNumber_simple.php');
 				break;
 			case ("REL"):
-				header('Location: AddNewPartNumber_simple.php');
+				header('Location: AddNewPartNumber_REL.php');
 				break;				
 			case ("AD"):
 				header('Location: AddNewPartNumber_simple.php');

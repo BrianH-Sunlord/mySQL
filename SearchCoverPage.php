@@ -151,7 +151,7 @@
 				header('Location: Search_simple.php');
 				break;
 			case ("REL"):
-				header('Location: Search_simple.php');
+				header('Location: Search_table.php');
 				break;				
 			case ("AD"):
 				header('Location: Search_simple.php');
