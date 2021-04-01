@@ -31,7 +31,7 @@ function createtable ($table_name, $sql) {
 
 		//Pull all data and fill in table	
 			//$sql = "SELECT * FROM fr_part_numbers ORDER BY ID";
-			$result = mysqli_query($dbc,$sql);
+			$result = mysqli_query($dbc,$sql) or die(mysqli_error($dbc));
 			echo '<tr>';
 				
 			while($row = mysqli_fetch_array($result)){
