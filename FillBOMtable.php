@@ -20,7 +20,7 @@
 		<div class="container">
 				<div class="six column">
 					<label for="dvrf_number">DVRF Number:</label>
-				<input class="u-full-width" type="text" name="dvrf_number" value = "DVRFxxxxx">
+				<input class="u-full-width" type="text" name="dvrf_number" placeholder = "DVRFxxxxx">
 				</div>
 		</div>'		
 		
@@ -33,7 +33,7 @@
 		
 		<div class="one column">
 						<label for="qty">Qty:</label>
-			<input class="u-full-width" type="text" name="qty" placeholder = "">
+			<input class="u-full-width" type="text" name="qty" value = 1>
 		</div>
 
 		<div class="two column">
@@ -75,6 +75,42 @@
 		$part_number = trim($_POST['part_number']);
 		$qty = trim($_POST['qty']);
 		$dvrf_number = trim($_POST['dvrf_number']);
+		
+		// Set up error and regex arrays
+		$errors= array();
+		$regex = array("/^[A-Z]{2}-[0-9]{1,2}-[0-9]{4}$/" , "/^[A-Z]{2}-[0-9]{4}$/" , "/^DVRF[0-9]{5}$/");
+		
+		//Check DVRF number is in correct format
+		if(preg_match($regex[2], $dvrf_number)==FALSE){
+			$errors[]="DVRF part number not in correct format.";
+		}
+		
+		
+		//Switch Case statement to select by type
+		switch ($type) {
+			case "long":
+				$i=0;
+				if (preg_match($regex[$i], $part_number)==FALSE) {
+					$errors[]="Part number format does not match Type selected.";
+				}
+			break;
+		
+			case "short":
+				$i=1;
+				if (preg_match($regex[$i], $part_number)==FALSE) {
+					$errors[]="Part number format does not match Type selected.";
+				}			
+			break;
+			
+			case "testfile":
+				$i=2;
+				if (preg_match($regex[$i], $part_number)==FALSE) {
+					$errors[]="Part number format does not match Type selected.";
+				}		
+		}
+	
+		//If no errors then update to database and upload file
+		if(empty($errors)==true){
 	
 		//Create MySQL insert statement
 		$sql = "INSERT INTO bom_table (dvrf_number, part_number, type, qty) 
@@ -88,7 +124,7 @@
 		//Confirm new record inserted 
         if ($sql) {
 				echo "Added to BOM successfully....refreshing....";
-				echo '<meta http-equiv="refresh" content="4">';
+				echo '<meta http-equiv="refresh" content="2">';
 		} else {
 				echo "Error: ";
 				}
@@ -126,7 +162,17 @@
 					 </tr>';
 			}
 				
-			echo '</table><br>';		
+			echo '</table><br>';
+			
+		}else{
+			echo "<h3>Error!</h3>";
+			echo '<br>';
+			foreach ($errors as $key=>$item){
+				echo "$item <br>";
+			}
+			echo "<h3>Wait while we refresh page, you need to start again.....</h3>";
+			echo '<meta http-equiv="refresh" content="10">';	
+		}		
 	}
 
 ?>
