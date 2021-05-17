@@ -170,7 +170,8 @@ $target_dir = "d://docvault/";  //change to d://docvault/ for shared drive
 				$i=3;
 				if (preg_match($regex[$i], $drawing_number)==FALSE) {
 					$errors[]="Part number format does not match Type selected.";
-				}		
+				}
+			break;				
 
 			case "relreport":
 				$i=4;
