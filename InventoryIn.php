@@ -169,7 +169,17 @@
 			$status = 0;
 		};
 		
-		//echo $status;
+		//Checks if part_number is on Minimum Inventory List
+		$sqlE = "SELECT * FROM inventory_min WHERE inventory_min.part_number = '" . $part_number . "' LIMIT 1;";
+		require_once('./mysqli_connect.php');
+		$result = mysqli_query($dbc,$sqlE);
+		if (mysqli_fetch_row($result)) {
+			$onMinInv = 1;
+		} else {
+			$onMinInv = 0;
+		};
+		
+		//echo $onMinInv;
 		
 		//If not in database
 		if ($status==0) {
@@ -198,8 +208,17 @@
 
 		//Confirm new record inserted 
         if ($sql) {
+				if ($onMinInv == 1) {
+					echo "NOTE! This item is on the Minimum Inventory List.";
+					echo "<br>";
+				} else {
+					echo "This item is NOT on the Minimum Inventory List.";
+					echo "<br>";
+				}
+				
 				echo "Inventory updated successfully....refreshing....";
-				echo '<meta http-equiv="refresh" content="4">';
+				echo '<meta http-equiv="refresh" content="10">';
+
 		} else {
 				echo "Error: ";
 				}
