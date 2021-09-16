@@ -41,6 +41,7 @@
 			<option value="RC">Return, Cover (RC)</options>
 			<option value="TC">Temperature Compensator (TC)</options>
 			<option value="TM">Termination (TM)</options>
+			<option value="HW">Hardware (HW)</options>
 			<option value="TF">Test Fixture (TF)</options>
 			<option value="PA">Pill Assembly Fixture (PA)</options>
 			<option value="FF">Form Fixture (FF)</options>
@@ -142,6 +143,9 @@
 			case "FR":
 				header('Location: AddNewPartNumber_FR.php');
 				break;
+			case ("HW"):
+				header('Location: AddNewPartNumber_simple.php');
+				break;	
 			case ("TF"):
 				header('Location: AddNewPartNumber_TF.php');
 				break;				
